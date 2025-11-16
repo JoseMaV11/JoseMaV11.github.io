@@ -5,71 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V11 Ingeniería</title>
 
-  <!-- Tipografía Premium -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="icon" type="image/png" href="img/Logo_V11.png">
 
   <style>
-    /* PALETA PREMIUM APPLE */
     :root {
-      --azul-premium: #0a84ff;
-      --fondo-claro: #f5f7fa;
-      --texto-oscuro: #1a1d23;
-      --texto-suave: #4b5563;
-      --card-claro: #ffffff;
-      --borde-suave: #e5e7eb;
+      --azul-oscuro: #13202d;
+      --azul-neon: #00a8ff;
+      --fondo-oscuro: #0d141c;
+      --texto: #e5e9f0;
+      --texto-suave: #a0aec0;
+      --card: #141c26;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--fondo-claro);
-      color: var(--texto-oscuro);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #18222f, #0d141c);
+      color: var(--texto);
     }
 
-    /* HEADER APPLE */
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.82);
-      border-bottom: 1px solid var(--borde-suave);
+      backdrop-filter: blur(12px);
+      background: rgba(10, 15, 22, 0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 40px;
-      -webkit-backdrop-filter: blur(10px);
+      padding: 8px 36px;
     }
-
     .logo-area {
       display: flex;
       align-items: center;
       gap: 14px;
     }
-
     .logo-area img {
       width: 40px;
       height: 40px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
-
     .logo-text {
-      line-height: 1.1;
       display: flex;
       flex-direction: column;
+      line-height: 1.1;
     }
-
     .logo-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--azul-premium);
+      color: var(--azul-neon);
     }
-
     .logo-text span:last-child {
       font-size: 14px;
       color: var(--texto-suave);
@@ -77,16 +68,14 @@
 
     nav a {
       color: var(--texto-suave);
-      margin-left: 26px;
+      margin-left: 20px;
       text-decoration: none;
       font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.10em;
       padding-bottom: 4px;
       position: relative;
-      transition: 0.2s ease;
     }
-
     nav a::after {
       content: "";
       position: absolute;
@@ -94,238 +83,219 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: var(--azul-premium);
+      background: var(--azul-neon);
       transition: width 0.25s ease;
     }
-
     nav a:hover {
-      color: var(--texto-oscuro);
+      color: #ffffff;
     }
-
     nav a:hover::after {
       width: 100%;
     }
 
-    /* MAIN COMPACTO APPLE */
+    /* TEXTOS JUSTIFICADOS */
+    p, .card, .hero-subtitle {
+      text-align: justify;
+    }
+
+    /* LAYOUT */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 6px 20px 80px;
+      padding: 4px 20px 80px;
     }
 
-    /* HERO APPLE */
+    /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
       gap: 40px;
       align-items: center;
-      padding: 6px 10px 18px;
+      padding: 6px 20px 20px;
     }
-
     .hero-title {
-      font-size: 46px;
+      font-size: 38px;
       font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.12;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       margin-bottom: 6px;
-      text-align: justify;
     }
-
     .hero-title span {
-      color: var(--azul-premium);
+      color: var(--azul-neon);
     }
-
     .hero-subtitle {
-      margin-top: 10px;
-      font-size: 17px;
-      max-width: 620px;
+      margin-top: 8px;
+      font-size: 16px;
       color: var(--texto-suave);
-      text-align: justify;
     }
 
     .hero-tags {
-      margin-top: 20px;
+      margin-top: 16px;
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
-
     .tag {
       font-size: 11px;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--texto-suave);
-      border: 1px solid #cbd5e1;
       padding: 6px 10px;
       border-radius: 999px;
+      border: 1px solid rgba(156,163,175,0.4);
+      color: var(--texto-suave);
     }
 
     .hero-cta {
-      margin-top: 26px;
+      margin-top: 20px;
       display: flex;
       gap: 12px;
+      flex-wrap: wrap;
     }
-
     .btn {
-      padding: 12px 24px;
+      display: inline-block;
       border-radius: 999px;
-      text-decoration: none;
+      padding: 11px 22px;
       font-size: 14px;
       font-weight: 600;
-      display: inline-block;
-      transition: 0.2s ease;
+      text-decoration: none;
+      transition: 0.18s ease;
+      cursor: pointer;
     }
-
     .btn-primary {
-      background: var(--azul-premium);
-      color: white;
-      box-shadow: 0 6px 20px rgba(10, 132, 255, 0.25);
+      background: var(--azul-neon);
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(0,168,255,0.30);
     }
-
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 28px rgba(10, 132, 255, 0.32);
+      box-shadow: 0 12px 34px rgba(0,168,255,0.45);
     }
-
     .btn-ghost {
-      border: 1px solid var(--borde-suave);
-      color: var(--texto-oscuro);
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--texto-suave);
     }
-
     .btn-ghost:hover {
-      background: #eef2f7;
+      background: rgba(20,30,45,0.8);
+      color: white;
     }
 
-    /* PANEL INDICADORES APPLE */
+    /* PANEL INDICADORES */
     .hero-panel {
-      background: white;
-      padding: 20px;
+      background: radial-gradient(circle at top, #24344a 0%, #0d141c 75%);
       border-radius: 18px;
-      border: 1px solid var(--borde-suave);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      padding: 20px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
-
     .hero-panel h3 {
-      margin-top: 0;
-      letter-spacing: 0.06em;
-      font-size: 13px;
+      margin: 0;
+      font-size: 15px;
       color: var(--texto-suave);
       text-transform: uppercase;
-      margin-bottom: 12px;
+      letter-spacing: 0.14em;
+      font-weight: 500;
     }
 
     .metrics {
+      margin-top: 16px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
     }
-
     .metric {
-      background: #f9fafb;
-      border: 1px solid var(--borde-suave);
-      padding: 16px;
+      background: rgba(13,20,30,0.8);
+      padding: 14px 16px;
       border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.4);
     }
-
     .metric span:first-child {
       font-size: 22px;
-      color: var(--azul-premium);
+      color: var(--azul-neon);
       font-weight: 600;
     }
-
     .metric span:last-child {
       display: block;
-      margin-top: 4px;
       font-size: 12px;
       color: var(--texto-suave);
+      margin-top: 4px;
     }
 
     /* SECCIONES */
     section {
-      margin-top: 60px;
+      margin-top: 50px;
     }
-
     section h2 {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-size: 22px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--texto-suave);
       margin-bottom: 14px;
-    }
-
-    section h2 span {
-      color: var(--azul-premium);
-    }
-
-    section p {
-      max-width: 700px;
-      font-size: 15px;
       color: var(--texto-suave);
-      text-align: justify;
+    }
+    section h2 span {
+      color: var(--azul-neon);
+    }
+    section p {
+      max-width: 720px;
+      font-size: 14px;
+      color: var(--texto-suave);
     }
 
-    /* CARDS APPLE */
+    /* CARDS */
     .grid-cards {
       margin-top: 26px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 20px;
     }
-
     .card {
-      background: white;
-      border: 1px solid var(--borde-suave);
+      background: var(--card);
       border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      padding: 18px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
       font-size: 14px;
       color: var(--texto-suave);
       text-align: justify;
     }
-
     .card h3 {
-      margin-top: 6px;
-      margin-bottom: 10px;
-      color: var(--texto-oscuro);
-      font-size: 17px;
-      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
     }
-
     .card small {
+      color: var(--azul-neon);
       font-size: 11px;
-      letter-spacing: 0.10em;
       text-transform: uppercase;
-      color: var(--azul-premium);
+      letter-spacing: 0.18em;
     }
 
     /* CONTACTO */
     .contact-box {
-      margin-top: 30px;
+      margin-top: 26px;
       display: inline-block;
-      background: #ffffff;
-      border: 1px solid var(--borde-suave);
-      padding: 18px 20px;
+      background: rgba(15,23,42,0.9);
       border-radius: 14px;
+      padding: 16px 20px;
+      border: 1px solid rgba(148,163,184,0.4);
       font-size: 14px;
-      color: var(--texto-suave);
+    }
+    .contact-box a {
+      color: var(--azul-neon);
+      text-decoration: underline;
     }
 
-    /* FOOTER */
     footer {
-      margin-top: 80px;
+      margin-top: 60px;
       text-align: center;
-      padding: 24px;
+      padding: 20px;
       font-size: 12px;
-      background: #ffffff;
-      border-top: 1px solid var(--borde-suave);
       color: var(--texto-suave);
+      background: #0b1118;
+      border-top: 1px solid rgba(148,163,184,0.25);
     }
 
     @media (max-width: 800px) {
       nav { display: none; }
       .hero { grid-template-columns: 1fr; }
-      .hero-title { font-size: 36px; }
     }
   </style>
 </head>
@@ -355,7 +325,7 @@
   <section class="hero">
     <div>
       <div class="hero-title">
-        Ingeniería <span>Industrial</span> y <span>Tecnológica</span>
+        Ingeniería <span>industrial</span> y <span>tecnológica</span>
       </div>
 
       <p class="hero-subtitle">
@@ -371,7 +341,7 @@
       </div>
 
       <div class="hero-cta">
-        <a href="#contacto" class="btn btn-primary">Hablemos de tu proyecto</a>
+        <a href="mailto:info@v11.es" class="btn btn-primary">Hablemos de tu proyecto</a>
         <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
       </div>
     </div>
@@ -379,10 +349,22 @@
     <div class="hero-panel">
       <h3>Indicadores</h3>
       <div class="metrics">
-        <div class="metric"><span>+15</span><span>Años de experiencia</span></div>
-        <div class="metric"><span>+50</span><span>Proyectos técnicos</span></div>
-        <div class="metric"><span>24/7</span><span>Soporte a planta</span></div>
-        <div class="metric"><span>100%</span><span>Orientados al cliente</span></div>
+        <div class="metric">
+          <span>+15</span>
+          <span>Años de experiencia</span>
+        </div>
+        <div class="metric">
+          <span>+50</span>
+          <span>Proyectos técnicos</span>
+        </div>
+        <div class="metric">
+          <span>24/7</span>
+          <span>Soporte a planta</span>
+        </div>
+        <div class="metric">
+          <span>100%</span>
+          <span>Orientados al cliente</span>
+        </div>
       </div>
     </div>
   </section>
@@ -390,19 +372,23 @@
   <!-- SERVICIOS -->
   <section id="servicios">
     <h2><span>Servicios</span> de ingeniería</h2>
-    <p>Acompañamos a nuestros clientes desde la idea hasta la puesta en marcha.</p>
+    <p>
+      Acompañamos a nuestros clientes en todas las fases: desde el concepto inicial hasta la puesta en marcha.
+      Estos son algunos de los servicios que ofrecemos:
+    </p>
 
     <div class="grid-cards">
       <article class="card">
         <small>Proyectos</small>
         <h3>Proyectos industriales llave en mano</h3>
-        Diseño y redacción de proyectos para instalaciones industriales, ampliaciones de planta y nuevas líneas de producción.
+        Diseño y redacción de proyectos para instalaciones industriales, ampliaciones de planta,
+        adecuaciones normativas y nuevas líneas de producción.
       </article>
 
       <article class="card">
         <small>Cálculo y diseño</small>
         <h3>Ingeniería de detalle</h3>
-        Cálculo estructural, instalaciones eléctricas y mecánicas, integración de maquinaria y definición técnica para fabricación y montaje.
+        Cálculo estructural, instalaciones eléctricas y mecánicas, integración de equipos y definición técnica para fabricación y montaje.
       </article>
 
       <article class="card">
@@ -416,19 +402,21 @@
   <!-- SECTORES -->
   <section id="sectores">
     <h2><span>Sectores</span> en los que trabajamos</h2>
-    <p>Desarrollamos soluciones especializadas para distintos ámbitos industriales.</p>
+    <p>
+      Colaboramos con empresas de diferentes sectores industriales, adaptando cada solución a sus procesos y sistemas productivos.
+    </p>
 
     <div class="grid-cards">
       <article class="card">
         <small>Industria</small>
-        <h3>Manufactura y procesos</h3>
-        Ingeniería aplicada a líneas de producción, logística interna y automatización de procesos.
+        <h3>Procesos y operaciones industriales</h3>
+        Ingeniería aplicada a plantas industriales: integración de equipos, sistemas de proceso y automatización de operaciones.
       </article>
 
       <article class="card">
         <small>Energía</small>
         <h3>Instalaciones energéticas</h3>
-        Sistemas eléctricos, alumbrado, autoconsumo fotovoltaico y eficiencia energética.
+        Instalaciones eléctricas de BT/MT, alumbrado, autoconsumo fotovoltaico y eficiencia energética.
       </article>
 
       <article class="card">
@@ -442,19 +430,19 @@
   <!-- PROYECTOS -->
   <section id="proyectos">
     <h2><span>Proyectos</span> seleccionados</h2>
-    <p>Próximamente añadiremos una selección de nuestros últimos proyectos.</p>
+    <p>Próximamente añadiremos una selección de proyectos representativos.</p>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto">
     <h2><span>Contacto</span></h2>
-    <p>Cuéntanos qué necesitas y te propondremos una solución adecuada.</p>
-  
+    <p>Cuéntanos qué necesitas y te propondremos una solución adaptada a tu proyecto.</p>
+
     <div class="contact-box">
-      📧 Escríbenos a: <strong><a href="mailto:info@v11.es">info@v11.es</a></strong><br>
-      📍 Ubicación: <strong>Linares (Jaén)</strong>
+      📧 Escríbenos a: 
+      <strong><a href="mailto:info@v11.es">info@v11.es</a></strong><br>
+      📍 Ubicación: <strong>Linares</strong><br>
     </div>
-    
   </section>
 
 </main>
