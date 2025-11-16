@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V11 Ingeniería</title>
 
-  <!-- Icono de la pestaña -->
   <link rel="icon" type="image/png" href="img/Logo_V11.png">
 
   <style>
     :root {
-      --azul-oscuro: #041423;
+      --azul-oscuro: #13202d;
       --azul-neon: #00a8ff;
-      --gris-fondo: #0b1724;
+      --fondo-oscuro: #0d141c;
       --texto: #e5e9f0;
       --texto-suave: #a0aec0;
-      --card: #101826;
+      --card: #141c26;
     }
 
     * { box-sizing: border-box; }
@@ -23,7 +22,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #102a43 0, #020813 60%);
+      background: linear-gradient(to bottom, #18222f, #0d141c);
       color: var(--texto);
     }
 
@@ -33,12 +32,12 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(12px);
-      background: rgba(4, 20, 35, 0.88);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(10, 15, 22, 0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 40px;
+      padding: 8px 36px;
     }
     .logo-area {
       display: flex;
@@ -57,7 +56,7 @@
     }
     .logo-text span:first-child {
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       font-size: 12px;
       color: var(--azul-neon);
@@ -73,9 +72,9 @@
       text-decoration: none;
       font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      position: relative;
+      letter-spacing: 0.10em;
       padding-bottom: 4px;
+      position: relative;
     }
     nav a::after {
       content: "";
@@ -94,11 +93,16 @@
       width: 100%;
     }
 
-    /* LAYOUT GENERAL */
+    /* TEXTOS JUSTIFICADOS */
+    p, .card, .hero-subtitle {
+      text-align: justify;
+    }
+
+    /* LAYOUT */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 10px 20px 80px;
+      padding: 4px 20px 80px;
     }
 
     /* HERO */
@@ -107,39 +111,42 @@
       grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
       gap: 40px;
       align-items: center;
-      padding: 10px 20px 20px;
+      padding: 6px 20px 20px;
     }
     .hero-title {
-      font-size: 40px;
+      font-size: 38px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
+      margin-bottom: 6px;
     }
     .hero-title span {
       color: var(--azul-neon);
     }
     .hero-subtitle {
-      margin-top: 14px;
+      margin-top: 8px;
       font-size: 16px;
       color: var(--texto-suave);
     }
+
     .hero-tags {
-      margin-top: 20px;
+      margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
     .tag {
       font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(156, 163, 175, 0.4);
+      border: 1px solid rgba(156,163,175,0.4);
       color: var(--texto-suave);
     }
+
     .hero-cta {
-      margin-top: 26px;
+      margin-top: 20px;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
@@ -151,60 +158,60 @@
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
+      transition: 0.18s ease;
       cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      border: none;
     }
     .btn-primary {
       background: var(--azul-neon);
       color: #020617;
-      box-shadow: 0 12px 30px rgba(0, 168, 255, 0.35);
+      box-shadow: 0 12px 30px rgba(0,168,255,0.30);
     }
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(0, 168, 255, 0.5);
+      box-shadow: 0 12px 34px rgba(0,168,255,0.45);
     }
     .btn-ghost {
-      background: transparent;
+      border: 1px solid rgba(148,163,184,0.5);
       color: var(--texto-suave);
-      border: 1px solid rgba(148, 163, 184, 0.6);
     }
     .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
+      background: rgba(20,30,45,0.8);
+      color: white;
     }
 
+    /* PANEL INDICADORES */
     .hero-panel {
-      background: radial-gradient(circle at top, #1f3b5b 0, #020617 60%);
+      background: radial-gradient(circle at top, #24344a 0%, #0d141c 75%);
       border-radius: 18px;
       padding: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
     .hero-panel h3 {
-      margin-top: 0;
-      font-size: 16px;
+      margin: 0;
+      font-size: 15px;
       color: var(--texto-suave);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       font-weight: 500;
     }
+
     .metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
       margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
     }
     .metric {
-      background: rgba(15, 23, 42, 0.8);
-      border-radius: 14px;
+      background: rgba(13,20,30,0.8);
       padding: 14px 16px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.4);
     }
     .metric span:first-child {
       font-size: 22px;
-      font-weight: 600;
       color: var(--azul-neon);
+      font-weight: 600;
     }
     .metric span:last-child {
       display: block;
@@ -215,93 +222,84 @@
 
     /* SECCIONES */
     section {
-      margin-top: 60px;
+      margin-top: 50px;
     }
     section h2 {
       font-size: 22px;
-      margin-bottom: 14px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      margin-bottom: 14px;
       color: var(--texto-suave);
     }
     section h2 span {
       color: var(--azul-neon);
     }
     section p {
-      color: var(--texto-suave);
       max-width: 720px;
       font-size: 14px;
+      color: var(--texto-suave);
     }
 
+    /* CARDS */
     .grid-cards {
       margin-top: 26px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
       gap: 20px;
     }
     .card {
       background: var(--card);
       border-radius: 16px;
-      padding: 18px 18px 22px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+      padding: 18px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
       font-size: 14px;
       color: var(--texto-suave);
+      text-align: justify;
     }
     .card h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 16px;
-      color: #e5e7eb;
+      margin-bottom: 8px;
+      color: #ffffff;
     }
     .card small {
+      color: var(--azul-neon);
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-size: 11px;
-      color: var(--azul-neon);
     }
 
     /* CONTACTO */
     .contact-box {
       margin-top: 26px;
       display: inline-block;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15,23,42,0.9);
       border-radius: 14px;
       padding: 16px 20px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148,163,184,0.4);
       font-size: 14px;
     }
-    .contact-box strong {
-      color: #e5e7eb;
+    .contact-box a {
+      color: var(--azul-neon);
+      text-decoration: underline;
     }
 
-    /* FOOTER */
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 18px 20px 26px;
+      margin-top: 60px;
       text-align: center;
+      padding: 20px;
       font-size: 12px;
       color: var(--texto-suave);
-      background: #020617;
+      background: #0b1118;
+      border-top: 1px solid rgba(148,163,184,0.25);
     }
 
     @media (max-width: 800px) {
-      header {
-        padding: 10px 16px;
-      }
-      nav {
-        display: none; /* versión móvil simple por ahora */
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 32px 10px 10px;
-      }
-      main {
-        padding: 24px 14px 60px;
-      }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -322,12 +320,14 @@
 </header>
 
 <main>
+
   <!-- HERO -->
   <section class="hero">
     <div>
       <div class="hero-title">
         Ingeniería <span>industrial</span> y <span>tecnológica</span>
       </div>
+
       <p class="hero-subtitle">
         Diseño, cálculo y desarrollo de soluciones de ingeniería para industria, energía e instalaciones.
         Proyectos eficientes, seguros y preparados para el futuro.
@@ -341,7 +341,7 @@
       </div>
 
       <div class="hero-cta">
-        <a href="#contacto" class="btn btn-primary">Hablemos de tu proyecto</a>
+        <a href="mailto:info@v11.es" class="btn btn-primary">Hablemos de tu proyecto</a>
         <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
       </div>
     </div>
@@ -388,14 +388,13 @@
       <article class="card">
         <small>Cálculo y diseño</small>
         <h3>Ingeniería de detalle</h3>
-        Cálculo estructural, instalaciones eléctricas y mecánicas, integración de equipos y definición técnica
-        para fabricación y montaje.
+        Cálculo estructural, instalaciones eléctricas y mecánicas, integración de equipos y definición técnica para fabricación y montaje.
       </article>
 
       <article class="card">
         <small>Consultoría</small>
         <h3>Asesoría técnica y auditorías</h3>
-        Informes, estudios de viabilidad, optimización energética y soporte en certificaciones y cumplimiento normativo.
+        Informes, estudios de viabilidad, optimización energética y soporte normativo.
       </article>
     </div>
   </section>
@@ -404,25 +403,26 @@
   <section id="sectores">
     <h2><span>Sectores</span> en los que trabajamos</h2>
     <p>
-      Colaboramos con empresas de diferentes sectores industriales, adaptando cada solución a sus procesos,
-      equipos y ritmo de operación.
+      Colaboramos con empresas de diferentes sectores industriales, adaptando cada solución a sus procesos y sistemas productivos.
     </p>
 
     <div class="grid-cards">
       <article class="card">
         <small>Industria</small>
-        <h3>Manufactura y procesos</h3>
-        Líneas de producción, packaging, manipulación de materiales y automatización de procesos.
+        <h3>Procesos y operaciones industriales</h3>
+        Ingeniería aplicada a plantas industriales: integración de equipos, sistemas de proceso y automatización de operaciones.
       </article>
+
       <article class="card">
         <small>Energía</small>
         <h3>Instalaciones energéticas</h3>
         Instalaciones eléctricas de BT/MT, alumbrado, autoconsumo fotovoltaico y eficiencia energética.
       </article>
+
       <article class="card">
         <small>Edificación</small>
         <h3>Instalaciones en edificios</h3>
-        Electricidad, climatización, fontanería y saneamiento, telecomunicaciones e instalaciones especiales.
+        Electricidad, climatización, fontanería, saneamiento e instalaciones especiales.
       </article>
     </div>
   </section>
@@ -430,27 +430,25 @@
   <!-- PROYECTOS -->
   <section id="proyectos">
     <h2><span>Proyectos</span> seleccionados</h2>
-    <p>
-      Próximamente añadiremos una selección de proyectos representativos.
-    </p>
+    <p>Próximamente añadiremos una selección de proyectos representativos.</p>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto">
     <h2><span>Contacto</span></h2>
-    <p>
-      Cuéntanos qué necesitas y te propondremos una solución técnica ajustada a tu proyecto.
-    </p>
+    <p>Cuéntanos qué necesitas y te propondremos una solución adaptada a tu proyecto.</p>
 
     <div class="contact-box">
-      📧 Escríbenos a: <strong>info@v11.es</strong><br>
-      📍 Ubicación: <strong>Linares, donde 3 huevos son 2 pares</strong><br>
+      📧 Escríbenos a: 
+      <strong><a href="mailto:info@v11.es">info@v11.es</a></strong><br>
+      📍 Ubicación: <strong>Linares</strong><br>
     </div>
   </section>
+
 </main>
 
 <footer>
-  © 2025 V11 Consulting  · Ingeniería Industrial · Renovables
+  © 2025 V11 Consulting · Ingeniería Industrial · Renovables
 </footer>
 
 </body>
